@@ -11,10 +11,19 @@ dnf install mysql -y
 
 if [ $? -ne 0 ]
 then 
-    echo "instll not hapeen"
+    echo "mysql install not hapeen"
     exit 2
 else
-    echo "install sucess"
+    echo "mysql install sucess"
+fi
+dnf install git -y
+
+if [ $? -ne 0 ]
+then 
+    echo "git instll not hapeen"
+    exit 2
+else
+    echo "git install sucess"
 fi
 
 

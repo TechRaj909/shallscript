@@ -7,15 +7,22 @@ then
     exit 1
 fi
 
-dnf install mysql -y
-
-if [ $? -ne 0 ]
-then 
+dnf list installed mysql
+ if [ $? -ne 0]
+ then
+    dnf install mysql -y
+    if [ $? -ne 0 ]
+    then 
     echo "mysql install not hapeen"
     exit 2
 else
     echo "mysql install sucess"
 fi
+else
+  echo "already installed"
+fi
+
+  
 dnf install git -y
 
 if [ $? -ne 0 ]

@@ -17,4 +17,10 @@ echo ${students[2]}
 
 echo ${students[@]}
 
+for student in "${students[@]};
+do 
+echo "studentName: $student"
+
+done
+
 

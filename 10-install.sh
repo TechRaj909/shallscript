@@ -12,7 +12,9 @@ dnf install mysql -y
 if [ $? -ne 0 ]
 then 
     echo "instll not hapeen"
+    exit 2
 else
     echo "install sucess"
-exit 2
+fi
+
 

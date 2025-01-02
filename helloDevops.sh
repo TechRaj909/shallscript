@@ -2,8 +2,12 @@
 
 echo "hi how are you :yopur name please "
  
-read name
+read uname
 
-echo Hi $name 
+echo Hi user $name 
 
- 
+read -sp password 
+
+echo password: $password
+
+

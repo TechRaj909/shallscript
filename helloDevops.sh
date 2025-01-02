@@ -1,4 +1,9 @@
 #!/bin/bash
 
-echo "hi this is my frist program"
+echo "hi how are you :yopur name please "
+ 
+read name
+
+echo Hi $name 
+
  

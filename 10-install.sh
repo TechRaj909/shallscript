@@ -2,5 +2,6 @@
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
-echo "this not a user"
+then
+    echo "this not a user"
 fi

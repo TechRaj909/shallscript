@@ -1,36 +1,38 @@
 #1/bin/bash
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then 
+    echo "$2....Fail"
+    exit 1
+else
+    echo "$2......sucess"
+fi
+
+}
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then
     echo "this not a user"
-    exit 1
+    exit 2
 fi
 
 dnf list installed mysql
  if [ $? -ne 0]
  then
     dnf install mysql -y
-    if [ $? -ne 0 ]
-    then 
-    echo "mysql install not hapeen"
-    exit 2
+    VALIDATE $? "installing"
 else
-    echo "mysql install sucess"
-fi
-else
-  echo "already installed"
+  echo "already installed mysql"
 fi
 
-  
-dnf install git -y
-
-if [ $? -ne 0 ]
-then 
-    echo "git instll not hapeen"
-    exit 2
+dnf list installed git
+ if [ $? -ne 0]
+ then
+    dnf install git -y
+     VALIDATE $? "installing"
 else
-    echo "git install sucess"
+  echo "already installed git"
 fi
 
 
